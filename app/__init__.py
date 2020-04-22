@@ -1,10 +1,9 @@
 from flask import Flask
-
 from app.models import db, migrate
 from app.routes.home_routes import home_routes
 from app.routes.book_routes import book_routes
 
-DATABASE_URI = "sqlite:////Users/mjr/Desktop/twitoff-13/twitoff_13.db" # TODO: read from env var
+DATABASE_URI = "sqlite:////Users/johanmazorra/TwitOff-JM/twitoff_jm.db/" # TODO: read from env var
 SECRET_KEY = "super secret" # TODO: read from env var
 
 def create_app():
