@@ -21,8 +21,12 @@ def twitter_api():
 if __name__ == "__main__":
 
     api = twitter_api()
-    user = api.get_user("alexpakalniskis")
+    user = api.get_user("KAYTRA")
     print("USER", user)
     print(user.screen_name)
     print(user.name)
     print(user.followers_count)
+
+    exit()
+    statuses = api.user_timeline("KAYTRA")
+    pprint(statuses[0]._json)
