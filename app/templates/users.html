@@ -1,0 +1,21 @@
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "users" %}
+
+{% block content %}
+
+    <h1>My Users Page</h1>
+
+    {% if users %}
+        <p>The database contains the following users:</p>
+
+        <ul>
+        {% for user in users %}
+            <li>{{ user.screen_name }} </li>
+        {% endfor %}
+        </ul>
+
+    {% else %}
+        <p>No users in the database. Please seed some.</p>
+    {% endif %}
+
+{% endblock %}

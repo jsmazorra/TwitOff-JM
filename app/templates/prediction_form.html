@@ -1,0 +1,35 @@
+{% extends "bootstrap_layout.html" %}
+{% set active_page = "prediction_form" %}
+
+{% block content %}
+    <h2>Prediction Time</h2>
+
+    <p>Use the form below to predict which user is more likely to say a given tweet...</p>
+
+    <form action="/stats/predict" method="POST">
+
+        <label>Twitter User A:</label>
+        <select name="screen_name_a">
+            <option value="elonmusk" selected="true">@elonmusk</option>
+            <option value="justinbieber">@justinbieber</option>
+            <option value="nbcnews">@nbcnews</option>
+            <option value="KAYTRANADA">@KAYTRA</option>
+        </select>
+        <br>
+
+        <label>Twitter User B:</label>
+        <select name="screen_name_b">
+            <option value="elonmusk">@elonmusk</option>
+            <option value="justinbieber" selected="true">@justinbieber</option>
+            <option value="nbcnews">@nbcnews</option>
+            <option value="KAYTRANADA">@KAYTRA</option>
+          </select>
+        <br>
+
+        <label>Tweet Text:</label>
+        <input type="text" name="tweet_text" placeholder="Tesla Model S production facility is great" value="Tesla Model S production facility is great">
+        <br>
+
+        <button>Submit</button>
+    </form>
+{% endblock %}
